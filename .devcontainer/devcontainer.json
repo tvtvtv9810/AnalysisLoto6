@@ -1,0 +1,12 @@
+{
+  "name": "Python Analysis Loto6",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "python",
+  "workspaceFolder": "/tmp/work",
+  "extensions": [
+    "ms-python.python"
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+  },
+}
