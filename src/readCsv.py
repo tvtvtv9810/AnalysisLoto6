@@ -8,13 +8,12 @@ def readCsv(csvFilePath):
 
     Parameters:
     ----------
-    x : string csvFilePath
-        operand1 of addition
+    csvFilePath : str
+        CSVファイルパス
 
     Returns:
     ----------
-    string
-        CSVの内容
+        CSVの内容 : [[CSV1行分],...]
     """
     dataList = pd.read_csv(csvFilePath).values.tolist()
 

@@ -1,6 +1,24 @@
 
 # １～６の番号：出現回数のカウント
 def convertToMapByNum(dataList):
+    """
+    番号ごとの出現回数をカウントします。
+
+    Parameters
+    ----------
+    dataList : list
+        データリスト[{No1,No2,No3,...}]
+
+    Returns
+    ----------
+        番号ごとの出現回数Map
+
+    Examples
+    --------
+    >>> convertToMapByNum({1,2,3,4,5,6},{3,4,5,7,12,16})
+    {{1:1},{2:2},...}
+
+    """
 
     # 数値ごとの回数をカウントしてマップ化
     countDictionary = {}
