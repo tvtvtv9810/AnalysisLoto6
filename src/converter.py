@@ -1,23 +1,17 @@
 
-# １～６の番号：出現回数のカウント
+
 def convertToMapByNum(dataList):
-    """
-    番号ごとの出現回数をカウントします。
+    """１～６の番号ごとの出現回数をカウントします。
 
     Parameters
-    ----------
-    dataList : list
-        データリスト[{No1,No2,No3,...}]
+        dataList (list): データリスト[{No1,No2,No3,...}]
 
     Returns
-    ----------
-        番号ごとの出現回数Map
+        (dictionary): 番号ごとの出現回数Map
 
     Examples
-    --------
-    >>> convertToMapByNum({1,2,3,4,5,6},{3,4,5,7,12,16})
-    {{1:1},{2:2},...}
-
+        >>> convertToMapByNum({1,2,3,4,5,6},{3,4,5,7,12,16})
+        {{1:1},{2:2},...}
     """
 
     # 数値ごとの回数をカウントしてマップ化
@@ -30,21 +24,32 @@ def convertToMapByNum(dataList):
             if number in countDictionary:
                 countDictionary[number] += 1
             else:
-                countDictionary[number] = 0
+                countDictionary[number] = 1
 
-    # # キー（Loto6番号）でソート
-    # print(sorted(countDictionary.items()))
-    # return sorted(countDictionary.items())
+    return countDictionary
 
-    # print("-------")
-
-    # # 回数でソート
-    # print(sorted(countDictionary.items(), key=lambda x: x[1]))
-    return sorted(countDictionary.items(), key=lambda x: x[1])
+    # キー（Loto6番号）でソート
+    ret = sorted(countDictionary.items())
+    # 回数でソート
+    # ret = sorted(countDictionary.items(), key=lambda x: x[1])
+    # print(ret)
+    # return ret
 
 
 # セット球：出現回数のカウント
 def convertToMapBySet(dataList):
+    """セット球の出現回数のカウントします。
+
+    Parameters
+        dataList (list): データリスト[{No1,No2,No3,...}]
+
+    Returns
+        (dictionary): セット球ごとの出現回数Map
+
+    Examples
+        >>> convertToMapBySet({1,2,3,4,5,6},{3,4,5,7,12,16})
+        {{A:1},{B:2},...}
+    """
 
     # 数値ごとの回数をカウントしてマップ化
     countDictionary = {}
@@ -54,21 +59,32 @@ def convertToMapBySet(dataList):
         if setNum in countDictionary:
             countDictionary[setNum] += 1
         else:
-            countDictionary[setNum] = 0
+            countDictionary[setNum] = 1
 
-    # # キー（Loto6番号）でソート
-    # print(sorted(countDictionary.items()))
-    # return sorted(countDictionary.items())
+    return countDictionary
 
-    # print("-------")
+    # キー（Loto6番号）でソート
+    # ret = sorted(countDictionary.items())
+    # 回数でソート
+    # ret = sorted(countDictionary.items(), key=lambda x: x[1])
+    # print(ret)
+    # return ret
 
-    # # 回数でソート
-    # print(sorted(countDictionary.items(), key=lambda x: x[1]))
-    return sorted(countDictionary.items(), key=lambda x: x[1])
 
-
-# １～６の番号：出現回数のカウント（セット球を指定）
 def convertToMapByNumFilterSet(dataList, targetSetNum):
+    """１～６の番号ごとの出現回数をカウントします。（セット球を指定）
+
+    Parameters
+        dataList (list): データリスト[{No1,No2,No3,...}]
+        targetSetNum (string): 対象のセット球
+
+    Returns
+        (dictionary): 番号ごとの出現回数Map
+
+    Examples
+        >>> convertToMapByNum({1,2,3,4,5,6},{3,4,5,7,12,16})
+        {{1:1},{2:2},...}
+    """
 
     # 数値ごとの回数をカウントしてマップ化
     countDictionary = {}
@@ -84,14 +100,13 @@ def convertToMapByNumFilterSet(dataList, targetSetNum):
             if number in countDictionary:
                 countDictionary[number] += 1
             else:
-                countDictionary[number] = 0
+                countDictionary[number] = 1
 
-    # # キー（Loto6番号）でソート
-    # print(sorted(countDictionary.items()))
-    # return sorted(countDictionary.items())
+    return countDictionary
 
-    # print("-------")
-
-    # # 回数でソート
-    # print(sorted(countDictionary.items(), key=lambda x: x[1]))
-    return sorted(countDictionary.items(), key=lambda x: x[1])
+    # キー（Loto6番号）でソート
+    # ret = sorted(countDictionary.items())
+    # 回数でソート
+    # ret = sorted(countDictionary.items(), key=lambda x: x[1])
+    # print(ret)
+    # return ret
